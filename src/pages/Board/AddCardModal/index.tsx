@@ -1,10 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 import Rodal from 'rodal'
 import "rodal/lib/rodal.css";
-import css from './index.module.css'
+import css from './index.module.scss'
 
-
-const AddCardModal = ({visible, onClose, handleCardAdd}) => {
+type Props = {
+    visible: boolean
+    onClose: () => void
+    handleCardAdd: (title: string, detail: string) => void
+}
+const AddCardModal: FC<Props> = ({visible, onClose, handleCardAdd}) => {
     const customStyles = {
         background: "rgb(58 58 58)",
         padding: "20px",

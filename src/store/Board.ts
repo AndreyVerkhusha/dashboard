@@ -8,7 +8,7 @@ type State = {
 }
 const useBoard = create<State>((set)=> ({
     boardData: data.boardData(),
-    setBoard: (board: Board)=> set(()=> ({board}))
+    setBoard: (board: Board)=> set(()=> ({boardData: board}))
 }))
 
 export default useBoard

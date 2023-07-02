@@ -21,7 +21,7 @@ const Dashboard = () => {
                     </div>
                     <div className={css.cards}>
                         {data.dashboardData().map((card) =>
-                            <Card {...card}/>
+                            <Card key={card.title} {...card}/>
                         )}
                     </div>
                 </div>
