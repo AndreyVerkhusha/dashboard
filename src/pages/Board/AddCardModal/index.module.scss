@@ -1,19 +1,82 @@
-.container{
-  display: flex;
-  width: 100%;
-  flex-direction: column;
-  color: white
-}
-.container>div{
-  margin-top: 2rem;
+@keyframes show-modal {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.label{
+@keyframes hide-modal {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+.parentModal {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  opacity: 0;
+  transform: scale(0);
+
+  &.entered {
+    animation: show-modal .1s forwards;
+  }
+
+  &.exiting {
+    animation: hide-modal .4s forwards;
+  }
+}
+
+.container {
+  padding: 20px;
+  display: flex;
+  width: 100%;
+  max-width: 650px;
+  flex-direction: column;
+  color: white;
+  background: rgb(58, 58, 58);
+  border-radius: 10px;
+  opacity: 0;
+  transform: scale(0);
+
+  & > div {
+    margin-top: 1rem;
+  }
+
+  &.entered {
+    animation: show-modal .4s forwards;
+  }
+
+  &.exiting {
+    animation: hide-modal .4s forwards;
+  }
+}
+
+.label {
   font-weight: bold;
   font-size: 1.2rem;
 }
 
-.input{
+.input {
   color: white;
   font: inherit;
   margin-top: 12px;
@@ -29,7 +92,7 @@
   resize: none
 }
 
-.saveButton{
+.saveButton {
   width: 6rem;
   align-self: flex-end;
   margin-top: 1.5rem;
@@ -41,6 +104,7 @@
   border-radius: 8px;
 }
 
-.saveButton:disabled{
+.saveButton:disabled {
   background: grey;
 }
+
