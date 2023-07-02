@@ -70,55 +70,55 @@ export const data = {
                     title: "Backlog",
                     cards: [
                         {
-                            id: 1,
+                            id: 2,
                             title: "Database Setup",
                             description: "Firebase Integration"
                         },
                         {
-                            id: 2,
+                            id: 3,
                             title: "Data Flow",
                             description: "Setup Diagram with other developers"
                         },
                     ]
                 },
                 {
-                    id: 2,
+                    id: 4,
                     title: "TODO",
                     cards: [
                         {
-                            id: 9,
+                            id: 5,
                             title: "Data Table Page",
                             description: "Server side Pagination",
                         }
                     ]
                 },
                 {
-                    id: 3,
+                    id: 6,
                     title: "Doing",
                     cards: [
                         {
-                            id: 10,
+                            id: 7,
                             title: "Full Calendar Extension",
                             description: "Make new events and store in global states"
                         },
                         {
-                            id: 11,
+                            id: 8,
                             title: "Custom Kanban Board",
                             description: "Setup react-kanban dep within Dashboard as seperate page"
                         }
                     ]
                 },
                 {
-                    id: 4,
+                    id: 9,
                     title: "Completed",
                     cards: [
                         {
-                            id: 12,
+                            id: 10,
                             title: "Vite Server Setup",
                             description: "Configure required modules and starters"
                         },
                         {
-                            id: 13,
+                            id: 11,
                             title: "Modular structre",
                             description: "Write css in form of modules to reduce the naming conflicts"
                         }

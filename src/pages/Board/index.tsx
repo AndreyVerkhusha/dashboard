@@ -12,6 +12,7 @@ const BoardPage = () => {
 
     const {boardData, setBoard} = useBoard()
     const [modalOpened, setModalOpened] = useState(false)
+    const [currentColumn, setCurrentColumn] = useState<Column | {}>({})
 
     const handleColumnMove = (
         _: Column,
@@ -59,46 +60,42 @@ const BoardPage = () => {
                 };
         }
     }
-    const handleOpenModal = () => {
-        setModalOpened(true);
-    }
-    const handleCardAdd = (title, detail, props) => {
+    const handleCardAdd = (title: string, detail: string) => {
         const card = {
             id: new Date().getTime(),
             title,
             description: detail
         };
-
-        const updatedBoard = addCard(boardData, props, card)
+        console.log(currentColumn,'currentColumn')
+        const updatedBoard = addCard(boardData, currentColumn, card)
+        console.log(updatedBoard,'updatedBoard')
         setBoard(updatedBoard)
         setModalOpened(false)
-
     }
     return (
         <div className="board-container">
             <span>Trello Board</span>
             <Board
-                allowAddColumn
-                allowRenameColumn
-                allowRemoveCard
                 onCardDragEnd={handleCardMove}
                 onColumnDragEnd={handleColumnMove}
                 renderColumnHeader={(props: Column) => {
-                    console.log(props, 'props')
                     return (
-                        <div className='column-header'>
+                        <div className='column-header' key={props.title}>
                             <span>{props.title}</span>
                             <IoMdAdd
                                 color="white"
                                 size={25}
                                 title="Add card"
-                                onClick={() => handleOpenModal(props)}
+                                onClick={() => {
+                                    setModalOpened(true);
+                                    setCurrentColumn(props);
+                                }}
                             />
                         </div>
                     )
                 }}
                 renderCard={(props: Card) => (
-                    <div className='kanban-card' style={getGradient(props)}>
+                    <div className='kanban-card' style={getGradient(props)} key={props.title}>
                         <div>
                             <span>
                                 {props.title}
