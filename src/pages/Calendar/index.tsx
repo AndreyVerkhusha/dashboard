@@ -9,11 +9,11 @@ import './index.scss'
 const Calendar = () => {
     const { currentEvents, setCurrentEvents } = useCalendar()
 
-    const handleEvents = async (events) => {
+    const handleEvents = async (events: any) => {
         await Promise.resolve(setCurrentEvents(events))
     }
 
-    const handleDateSelect = (selectInfo) => {
+    const handleDateSelect = (selectInfo: any) => {
         let title = prompt('Please enter a title for the event')
         let calendarApi = selectInfo.view.calendar;
 
@@ -31,7 +31,7 @@ const Calendar = () => {
         }
     }
 
-    const handleEventClick = (clickInfo) => {
+    const handleEventClick = (clickInfo: any) => {
         if (
             confirm('Are you sure you want to delete this event?')
 
