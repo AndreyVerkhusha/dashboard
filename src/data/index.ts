@@ -1,5 +1,6 @@
 import moment from "moment/moment";
-import { Board, DashboardCard, Order } from "@/types";
+import { Board, DashboardCard, Order, UserData } from "@/types";
+import { EventInput } from "@fullcalendar/core";
 
 
 export const data = {
@@ -7,23 +8,23 @@ export const data = {
         return [
             {
                 title: "Revenue",
-                change: 24,
-                amount: 42056,
+                change: Math.floor(Math.random() * 250),
+                amount: Math.floor(Math.random() * 42222),
             },
             {
                 title: "Orders",
-                change: -14,
-                amount: 52125.03,
+                change: Math.floor(Math.random() * 250),
+                amount: Math.floor(Math.random() * 42222),
             },
             {
                 title: "Expenses",
-                change: 18,
-                amount: 1216.5,
+                change: Math.floor(Math.random() * 250),
+                amount: Math.floor(Math.random() * 42222),
             },
             {
                 title: "Profit",
-                change: 12,
-                amount: 10125.0,
+                change: Math.floor(Math.random() * 250),
+                amount: Math.floor(Math.random() * 42222),
             },
         ];
     },
@@ -58,9 +59,10 @@ export const data = {
         );
     },
     groupNumber(number: number) {
-        return parseFloat(number.toFixed(2)).toLocaleString("ru", {
-            useGrouping: true,
-        });
+        return parseFloat(number.toFixed(2))
+            .toLocaleString("ru", {
+                useGrouping: true,
+            });
     },
     boardData(): Board {
         return {
@@ -126,51 +128,47 @@ export const data = {
                 }
             ]
         };
+    },
+    createEventId(): string {
+        return String(eventGuid++);
     }
 };
 
-//* calendar Events
 let eventGuid = 0;
-const todayStr = moment().format("YYYY-MM-DD");  // YYYY-MM-DD of today
-export const INITIAL_EVENTS = [
+const todayStr = moment().format("YYYY-MM-DD");
+export const INITIAL_EVENTS: EventInput[] = [
     {
-        id: createEventId(),
+        id: data.createEventId(),
         title: 'Lunch Pary',
-        start: todayStr + 'T09:00:00',
+        start: todayStr,
     },
     {
-        id: createEventId(),
+        id: data.createEventId(),
         title: 'Timed event',
-        start: moment(todayStr).add(1, "days").format("YYYY-MM-DD") + 'T16:00:00'
+        start: moment(todayStr).add(1, "days").format("YYYY-MM-DD")
     },
     {
-        id: createEventId(),
+        id: data.createEventId(),
         title: "Head Meetup",
-        start: moment(todayStr).add(2, "days").format("YYYY-MM-DD") + 'T20:00:00'
+        start: moment(todayStr).add(2, "days").format("YYYY-MM-DD")
     },
     {
-        id: createEventId(),
+        id: data.createEventId(),
         title: "VC Meeting",
-        start: moment(todayStr).add(3, "days").format("YYYY-MM-DD") + 'T09:00:00'
+        start: moment(todayStr).add(3, "days").format("YYYY-MM-DD")
     },
     {
-        id: createEventId(),
+        id: data.createEventId(),
         title: "Payment Shedules",
-        start: moment(todayStr).add(5, "days").format("YYYY-MM-DD") + 'T13:00:00'
+        start: moment(todayStr).add(5, "days").format("YYYY-MM-DD")
     },
     {
-        id: createEventId(),
+        id: data.createEventId(),
         title: "VC Meeting",
-        start: moment(todayStr).add(6, "days").format("YYYY-MM-DD") + 'T13:00:00'
+        start: moment(todayStr).add(6, "days").format("YYYY-MM-DD")
     },
 ];
-
-export function createEventId() {
-    return String(eventGuid++);
-}
-
-// * user table data
-export const userData = [
+export const userData: UserData[] = [
     {
         name: {
             firstName: 'John',

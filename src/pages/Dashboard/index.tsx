@@ -3,8 +3,11 @@ import { data } from "@/data";
 import Card from './Card';
 import Statistics from "@/pages/Dashboard/Statistics";
 import Orders from "@/pages/Dashboard/Orders";
+import { useState } from "react";
 
 const Dashboard = () => {
+    const [_, setActiveSelect] = useState<string>("");
+
     return (
         <div className={css.container}>
             <div className={css.dashboard}>
@@ -12,10 +15,12 @@ const Dashboard = () => {
                     <div className={css.head}>
                         <span>Dashboard</span>
                         <div className={css.durationButton}>
-                            <select>
-                                <option value="">1 week</option>
-                                <option value="">1 month</option>
-                                <option value="">1 year</option>
+                            <select
+                                onChange={(e) => setActiveSelect(e.target.value)}
+                            >
+                                <option value="week">1 week</option>
+                                <option value="month">1 month</option>
+                                <option value="year">1 year</option>
                             </select>
                         </div>
                     </div>
@@ -25,7 +30,7 @@ const Dashboard = () => {
                         )}
                     </div>
                 </div>
-                  <Statistics/>
+                <Statistics/>
             </div>
             <Orders/>
         </div>

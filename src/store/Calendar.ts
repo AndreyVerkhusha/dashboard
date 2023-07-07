@@ -1,14 +1,14 @@
 import { create } from 'zustand';
-import { INITIAL_EVENTS } from '@/data'
+import {  INITIAL_EVENTS } from '@/data'
+import { EventApi, EventInput } from "@fullcalendar/core";
 
 type State = {
-    currentEvents: {id: string, title: string, start: string}[]
-    setCurrentEvents: (events: any) => void;
+    currentEvents: EventInput[]
+    setCurrentEvents: (event: EventApi[]) => void;
 }
-const useCalendar = create<State>((set) => {
-    return {
+const useCalendar = create<State>((set) => ({
         currentEvents: INITIAL_EVENTS,
-        setCurrentEvents: (events)=> set({currentEvents: events})
-    }
-})
+        setCurrentEvents: (events: any) => set({currentEvents: events})
+    })
+)
 export default useCalendar
