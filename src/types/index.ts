@@ -22,3 +22,9 @@ export type Column = {
 export type Board = {
     columns: Column[]
 }
+export type UserData = {
+    name: { firstName: string, lastName: string }
+    address: string
+    city: string
+    state: string
+}

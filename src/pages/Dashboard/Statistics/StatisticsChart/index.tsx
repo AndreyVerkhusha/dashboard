@@ -2,6 +2,9 @@ import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 
 const StatisticsChart = () => {
+    let mathRandom = () =>
+        Math.floor(Math.random() * 40000)
+
     const option = {
         color: ['var(--orange)'],
 
@@ -77,7 +80,7 @@ const StatisticsChart = () => {
                     focus: "series",
                 },
                 showSymbol: true,
-                data: [28000, 19000, 32000, 18000, 41000, 30000, 26000]
+                data: Array(7).fill(0).map(mathRandom)
             }
         ]
     };
