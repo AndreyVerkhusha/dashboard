@@ -1,5 +1,5 @@
-import {create} from 'zustand'
-import {data} from '@/data'
+import {create} from 'zustand';
+import {data} from '@/data';
 import { Board } from "@/types";
 
 type State = {
@@ -9,6 +9,6 @@ type State = {
 const useBoard = create<State>((set)=> ({
     boardData: data.boardData(),
     setBoard: (board: Board)=> set(()=> ({boardData: board}))
-}))
+}));
 
-export default useBoard
+export default useBoard;

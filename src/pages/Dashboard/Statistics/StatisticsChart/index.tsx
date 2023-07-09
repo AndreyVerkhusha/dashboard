@@ -2,8 +2,8 @@ import ReactECharts from 'echarts-for-react';
 import * as echarts from 'echarts';
 
 const StatisticsChart = () => {
-    let mathRandom = () =>
-        Math.floor(Math.random() * 40000)
+    const mathRandom = () =>
+        Math.floor(Math.random() * 40000);
 
     const option = {
         color: ['var(--orange)'],
