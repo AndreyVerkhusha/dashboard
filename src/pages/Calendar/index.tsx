@@ -1,25 +1,25 @@
-import FullCalendar from '@fullcalendar/react'
+import FullCalendar from '@fullcalendar/react';
 import {
     DateSelectArg,
     EventClickArg,
     EventApi
-} from "@fullcalendar/core"
-import dayGridPlugin from '@fullcalendar/daygrid'
-import interactionPlugin from '@fullcalendar/interaction'
-import timeGridPlugin from '@fullcalendar/timegrid'
-import useCalendar from '@/store/Calendar'
-import { data} from '@/data'
-import './index.scss'
+} from "@fullcalendar/core";
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+import timeGridPlugin from '@fullcalendar/timegrid';
+import useCalendar from '@/store/Calendar';
+import { data} from '@/data';
+import './index.scss';
 
 const Calendar = () => {
-    const {currentEvents, setCurrentEvents} = useCalendar()
+    const {currentEvents, setCurrentEvents} = useCalendar();
 
-    let handleEvents = (events: EventApi[]) => {
-        setCurrentEvents(events)
-    }
-    let handleDateSelect = (selectInfo: DateSelectArg) => {
-        let title = prompt('Please enter a title for the event')
-        let calendarApi = selectInfo.view.calendar;
+    const handleEvents = (events: EventApi[]) => {
+        setCurrentEvents(events);
+    };
+    const handleDateSelect = (selectInfo: DateSelectArg) => {
+        const title = prompt('Please enter a title for the event');
+        const calendarApi = selectInfo.view.calendar;
         calendarApi.unselect();
 
         if (title) {
@@ -29,13 +29,13 @@ const Calendar = () => {
                 start: selectInfo.start,
                 end: selectInfo.end,
                 allDay: selectInfo.allDay
-            })
+            });
         }
-    }
-    let handleEventClick = (clickInfo: EventClickArg) => {
+    };
+    const handleEventClick = (clickInfo: EventClickArg) => {
         if (confirm('Are you sure you want to delete this event?'))
-            clickInfo.event.remove()
-    }
+            clickInfo.event.remove();
+    };
     return (
         <div className="calendar-container">
             <div>
@@ -62,7 +62,7 @@ const Calendar = () => {
                 />
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default Calendar
+export default Calendar;

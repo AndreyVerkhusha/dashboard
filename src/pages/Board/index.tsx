@@ -1,41 +1,41 @@
 import { useState } from 'react';
-import Board, { moveCard, moveColumn, removeCard, addCard } from '@asseinfo/react-kanban'
-import { RxCross2 } from 'react-icons/rx'
-import { IoMdAdd } from 'react-icons/io'
+import Board, { moveCard, moveColumn, removeCard, addCard } from '@asseinfo/react-kanban';
+import { RxCross2 } from 'react-icons/rx';
+import { IoMdAdd } from 'react-icons/io';
 import { Card, Column } from "@/types";
 
 import useBoard from "@/store/Board";
 import AddCardModal from './AddCardModal';
-import "./index.scss"
+import "./index.scss";
 
 const BoardPage = () => {
 
-    const {boardData, setBoard} = useBoard()
-    const [modalOpened, setModalOpened] = useState(false)
-    const [currentColumn, setCurrentColumn] = useState<Column | {}>({})
+    const {boardData, setBoard} = useBoard();
+    const [modalOpened, setModalOpened] = useState(false);
+    const [currentColumn, setCurrentColumn] = useState<Column | object>({});
 
     const handleColumnMove = (
         _: Column,
         source: { fromPosition: number },
         destination: { toPosition: number }
     ) => {
-        const updatedBoard = moveColumn(boardData, source, destination)
-        setBoard(updatedBoard)
-    }
+        const updatedBoard = moveColumn(boardData, source, destination);
+        setBoard(updatedBoard);
+    };
     const handleCardMove = (
         _: Card,
         source: { fromPosition: number, fromColumnId: number },
         destination: { toPosition: number, toColumnId: number }
     ) => {
-        const updatedBoard = moveCard(boardData, source, destination)
-        setBoard(updatedBoard)
-    }
+        const updatedBoard = moveCard(boardData, source, destination);
+        setBoard(updatedBoard);
+    };
     const identifyColumn = (card: Card) => {
-        const column = boardData.columns.filter((column) => column.cards.includes(card))
-        return column[0]
-    }
+        const column = boardData.columns.filter((column) => column.cards.includes(card));
+        return column[0];
+    };
     const getGradient = (card: Card) => {
-        const column = identifyColumn(card)
+        const column = identifyColumn(card);
         const title = column.title;
         switch (title) {
             case "TODO":
@@ -59,22 +59,20 @@ const BoardPage = () => {
                         "linear-gradient(65.35deg, rgba(65, 65,65, 0.67) -1.72%,rgba(134, 48, 220) 163.54%)",
                 };
         }
-    }
+    };
     const handleCardAdd = (title: string, detail: string) => {
         const card = {
             id: new Date().getTime(),
             title,
             description: detail
         };
-        console.log(currentColumn,'currentColumn')
-        const updatedBoard = addCard(boardData, currentColumn, card)
-        console.log(updatedBoard,'updatedBoard')
-        setBoard(updatedBoard)
-        setModalOpened(false)
-    }
+        const updatedBoard = addCard(boardData, currentColumn, card);
+        setBoard(updatedBoard);
+        setModalOpened(false);
+    };
     return (
         <div className="board-container">
-            <span>Trello Board</span>
+            <span></span>
             <Board
                 onCardDragEnd={handleCardMove}
                 onColumnDragEnd={handleColumnMove}
@@ -92,7 +90,7 @@ const BoardPage = () => {
                                 }}
                             />
                         </div>
-                    )
+                    );
                 }}
                 renderCard={(props: Card) => (
                     <div className='kanban-card' style={getGradient(props)} key={props.title}>
@@ -122,7 +120,7 @@ const BoardPage = () => {
                 onClose={() => setModalOpened(false)}
             />
         </div>
-    )
-}
+    );
+};
 
-export default BoardPage
+export default BoardPage;

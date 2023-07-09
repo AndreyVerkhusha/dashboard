@@ -2,12 +2,12 @@ import { useMemo } from "react";
 import { MaterialReactTable, type MRT_ColumnDef } from "material-react-table";
 import { UserData } from "@/types";
 import { userData } from "@/data";
-
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import './index.scss';
 
 const Users = () => {
-    const columns = useMemo <MRT_ColumnDef<UserData>[]> (() => [
+    const columns = useMemo<MRT_ColumnDef<UserData>[]>(() => [
         {
             accessorKey: "name.firstName",
             header: 'First Name',
@@ -28,10 +28,14 @@ const Users = () => {
             accessorKey: "state",
             header: "State",
         },
-    ], [])
-    const theme =
-        useMemo(() =>
-            createTheme({palette: {mode: "dark"}}), [])
+    ], []);
+
+    const theme = useMemo(
+        () => createTheme({
+            palette: {
+                mode: "dark"
+            }
+        }), []);
     return (
         <div className="table-container">
             <ThemeProvider theme={theme}>

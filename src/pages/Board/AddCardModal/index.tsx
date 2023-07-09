@@ -1,7 +1,7 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC, useEffect } from 'react';
 import { Transition } from 'react-transition-group';
 
-import css from './index.module.scss'
+import css from './index.module.scss';
 
 type Props = {
     visible: boolean
@@ -10,30 +10,30 @@ type Props = {
 }
 const AddCardModal: FC<Props> = ({visible, onClose, handleCardAdd}) => {
 
-    const [title, setTitle] = React.useState('')
-    const [detail, setDetail] = React.useState('')
+    const [title, setTitle] = React.useState('');
+    const [detail, setDetail] = React.useState('');
 
-    let identifyClassName = (value: string) => {
+    const identifyClassName = (value: string) => {
         if (value === "entered")
-            return css.entered
+            return css.entered;
         if (value === "exiting")
-            return css.exiting
-    }
-    let clearState = () => {
+            return css.exiting;
+    };
+    const clearState = () => {
         onClose();
-        setTitle("")
-        setDetail("")
-    }
-    let escFunction = (event: KeyboardEvent) => {
+        setTitle("");
+        setDetail("");
+    };
+    const escFunction = (event: KeyboardEvent) => {
         if (event.key === "Escape")
             clearState();
-    }
+    };
 
     useEffect(() => {
         document.addEventListener("keydown", escFunction);
         return () =>
-            document.removeEventListener("keydown", escFunction)
-    }, [])
+            document.removeEventListener("keydown", escFunction);
+    }, []);
     return (
         <Transition
             in={visible}
@@ -81,7 +81,7 @@ const AddCardModal: FC<Props> = ({visible, onClose, handleCardAdd}) => {
             }
         </Transition>
 
-    )
-}
+    );
+};
 
-export default AddCardModal
+export default AddCardModal;
