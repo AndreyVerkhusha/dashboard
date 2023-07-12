@@ -4,12 +4,18 @@ import Card from './Card';
 import Statistics from "@/pages/Dashboard/Statistics";
 import Orders from "@/pages/Dashboard/Orders";
 import { useState } from "react";
+import { motion } from 'framer-motion';
 
 const Dashboard = () => {
     const [_, setActiveSelect] = useState<string>("");
 
     return (
-        <div className={css.container}>
+        <motion.div
+            className={css.container}
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+        >
             <div className={css.dashboard}>
                 <div className={`${css.dashboardHead} theme-container`}>
                     <div className={css.head}>
@@ -33,7 +39,7 @@ const Dashboard = () => {
                 <Statistics/>
             </div>
             <Orders/>
-        </div>
+        </motion.div>
     );
 };
 

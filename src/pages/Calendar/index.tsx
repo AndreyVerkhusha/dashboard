@@ -8,7 +8,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import useCalendar from '@/store/Calendar';
-import { data} from '@/data';
+import { data } from '@/data';
+import { motion } from 'framer-motion';
 import './index.scss';
 
 const Calendar = () => {
@@ -37,7 +38,13 @@ const Calendar = () => {
             clickInfo.event.remove();
     };
     return (
-        <div className="calendar-container">
+        <motion.div
+            className="calendar-container"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+        >
+
             <div>
                 <FullCalendar
                     plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
@@ -61,7 +68,7 @@ const Calendar = () => {
                     eventClick={handleEventClick}
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };
 

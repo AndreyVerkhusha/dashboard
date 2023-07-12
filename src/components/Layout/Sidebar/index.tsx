@@ -14,9 +14,10 @@ const Sidebar = () => {
                 alt="logo"
             />
             <div className={css.menu}>
-                <NavLink to="dashboard"
-                         className={css.item}
-                         title={"Dashboard"}
+                <NavLink
+                    to="dashboard"
+                    className={css.item}
+                    title={"Dashboard"}
                 >
                     <MdSpaceDashboard size={30}/>
                 </NavLink>

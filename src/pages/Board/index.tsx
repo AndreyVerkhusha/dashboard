@@ -1,15 +1,15 @@
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import Board, { moveCard, moveColumn, removeCard, addCard } from '@asseinfo/react-kanban';
-import { RxCross2 } from 'react-icons/rx';
-import { IoMdAdd } from 'react-icons/io';
 import { Card, Column } from "@/types";
 
 import useBoard from "@/store/Board";
 import AddCardModal from './AddCardModal';
+import { RxCross2 } from 'react-icons/rx';
+import { IoMdAdd } from 'react-icons/io';
 import "./index.scss";
 
 const BoardPage = () => {
-
     const {boardData, setBoard} = useBoard();
     const [modalOpened, setModalOpened] = useState(false);
     const [currentColumn, setCurrentColumn] = useState<Column | object>({});
@@ -71,14 +71,19 @@ const BoardPage = () => {
         setModalOpened(false);
     };
     return (
-        <div className="board-container">
+        <motion.div
+            className="board-container"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+        >
             <span></span>
             <Board
                 onCardDragEnd={handleCardMove}
                 onColumnDragEnd={handleColumnMove}
                 renderColumnHeader={(props: Column) => {
                     return (
-                        <div className='column-header' key={props.title}>
+                        <div className='column-header' >
                             <span>{props.title}</span>
                             <IoMdAdd
                                 color="white"
@@ -93,7 +98,7 @@ const BoardPage = () => {
                     );
                 }}
                 renderCard={(props: Card) => (
-                    <div className='kanban-card' style={getGradient(props)} key={props.title}>
+                    <div className='kanban-card' style={getGradient(props)} >
                         <div>
                             <span>
                                 {props.title}
@@ -119,7 +124,7 @@ const BoardPage = () => {
                 handleCardAdd={handleCardAdd}
                 onClose={() => setModalOpened(false)}
             />
-        </div>
+        </motion.div>
     );
 };
 
