@@ -3,6 +3,7 @@ import { MaterialReactTable, type MRT_ColumnDef } from "material-react-table";
 import { UserData } from "@/types";
 import { userData } from "@/data";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { motion } from 'framer-motion';
 
 import './index.scss';
 
@@ -37,11 +38,16 @@ const Users = () => {
             }
         }), []);
     return (
-        <div className="table-container">
+        <motion.div
+            className="table-container"
+            initial={{opacity: 0}}
+            animate={{opacity: 1}}
+            exit={{opacity: 0}}
+        >
             <ThemeProvider theme={theme}>
                 <MaterialReactTable columns={columns} data={userData}/>
             </ThemeProvider>
-        </div>
+        </motion.div>
     );
 };
 
