@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Board, { moveCard, moveColumn, removeCard, addCard } from '@asseinfo/react-kanban';
 import { Card, Column } from "@/types";
+import Tilt from 'react-parallax-tilt';
 
 import useBoard from "@/store/Board";
 import AddCardModal from './AddCardModal';
@@ -83,7 +84,7 @@ const BoardPage = () => {
                 onColumnDragEnd={handleColumnMove}
                 renderColumnHeader={(props: Column) => {
                     return (
-                        <div className='column-header' >
+                        <div className='column-header'>
                             <span>{props.title}</span>
                             <IoMdAdd
                                 color="white"
@@ -98,23 +99,30 @@ const BoardPage = () => {
                     );
                 }}
                 renderCard={(props: Card) => (
-                    <div className='kanban-card' style={getGradient(props)} >
-                        <div>
+                    <Tilt
+                        perspective={500}
+                        glareEnable={true}
+                        glareMaxOpacity={0.45}
+                        key={props.id}
+                    >
+                        <div className='kanban-card' style={getGradient(props)}>
+                            <div>
                             <span>
                                 {props.title}
                             </span>
-                            <button className='remove-button' type='button'
-                                    onClick={() => {
-                                        const updatedBoard =
-                                            removeCard(boardData, identifyColumn(props), props);
-                                        setBoard(updatedBoard);
-                                    }}
-                            >
-                                <RxCross2 color="white" size={15}/>
-                            </button>
+                                <button className='remove-button' type='button'
+                                        onClick={() => {
+                                            const updatedBoard =
+                                                removeCard(boardData, identifyColumn(props), props);
+                                            setBoard(updatedBoard);
+                                        }}
+                                >
+                                    <RxCross2 color="white" size={15}/>
+                                </button>
+                            </div>
+                            <span>{props.description}</span>
                         </div>
-                        <span>{props.description}</span>
-                    </div>
+                    </Tilt>
                 )}
             >
                 {boardData}
