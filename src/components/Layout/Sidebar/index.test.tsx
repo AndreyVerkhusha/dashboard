@@ -1,6 +1,5 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
-import { expect, it } from "vitest";
 import userEvent from '@testing-library/user-event';
 import Sidebar from "@/components/Layout/Sidebar/index";
 
