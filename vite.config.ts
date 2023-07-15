@@ -9,9 +9,6 @@ export default defineConfig({
     setupFiles: 'src/setup.ts',
     environment: 'jsdom'
   },
-  define: {
-    "global": {},
-  },
   plugins: [react()],
   resolve: {
     alias: [{ find: '@', replacement: path.resolve(__dirname, 'src') }],
