@@ -1,9 +1,9 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
-import Sidebar from './Sidebar';
-import moment from 'moment';
+import Sidebar from "./Sidebar";
+import moment from "moment";
 
 import person from "@/assets/profile_.png";
-import css from './index.module.scss';
+import css from "./index.module.scss";
 
 const Layout = () => {
     const {pathname} = useLocation();

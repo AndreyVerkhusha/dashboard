@@ -6,7 +6,7 @@ const OrdersPieChart = () => {
         {value: 110, name: "Skatebnoard"},
         {value: 72, name: "Language courses"},
         {value: 70, name: "Office Collaboration"},
-        {value: 35, name: "Robot"},
+        {value: 35, name: "Robot"}
     ];
     const option = {
         color: [
@@ -23,47 +23,47 @@ const OrdersPieChart = () => {
             new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                     offset: 0,
-                    color: "#BC1FD7",
+                    color: "#BC1FD7"
                 },
                 {
                     offset: 1,
-                    color: "#7F1DD1",
+                    color: "#7F1DD1"
                 }
             ]),
             new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                     offset: 0,
-                    color: "#E8A618",
+                    color: "#E8A618"
                 },
                 {
                     offset: 1,
-                    color: "#EB6B36",
+                    color: "#EB6B36"
                 }
             ]),
             new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                 {
                     offset: 0,
-                    color: "#D131BE",
+                    color: "#D131BE"
                 },
                 {
                     offset: 1,
-                    color: "#BF1575",
+                    color: "#BF1575"
                 }
-            ]),
+            ])
         ],
         tooltip: {
-            backgroundColor: 'rgba(34, 34, 34, 0.8)',
+            backgroundColor: "rgba(34, 34, 34, 0.8)",
             textStyle: {
-                color: '#fff',
+                color: "#fff"
             },
-            trigger: 'item',
+            trigger: "item",
             formatter: (params: { name: string, value: string }) => {
-                console.log(params, 'params');
+                console.log(params, "params");
                 return `<div class='exp-charts-tooltip'>
                <span>${params.name + ": "}</span>
                <span>${params.value + "$"}</span>
             </div>`;
-            },
+            }
         },
         series: [
             {
@@ -75,7 +75,7 @@ const OrdersPieChart = () => {
                 itemStyle: {
                     borderRadius: 50,
                     borderColor: "black",
-                    borderWidth: 5,
+                    borderWidth: 5
                 },
                 label: {
                     show: false,
@@ -87,7 +87,7 @@ const OrdersPieChart = () => {
                          fontSize: 20,
                          fontWeight: "bold"
                      },*/
-                },
+                }
             }
         ]
     };

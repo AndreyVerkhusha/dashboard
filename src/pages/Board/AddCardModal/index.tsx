@@ -1,7 +1,7 @@
-import React, { FC, useEffect } from 'react';
-import { Transition } from 'react-transition-group';
+import React, { FC, useEffect } from "react";
+import { Transition } from "react-transition-group";
 
-import css from './index.module.scss';
+import css from "./index.module.scss";
 
 type Props = {
     visible: boolean
@@ -10,8 +10,8 @@ type Props = {
 }
 const AddCardModal: FC<Props> = ({visible, onClose, handleCardAdd}) => {
 
-    const [title, setTitle] = React.useState('');
-    const [detail, setDetail] = React.useState('');
+    const [title, setTitle] = React.useState("");
+    const [detail, setDetail] = React.useState("");
 
     const identifyClassName = (value: string) => {
         if (value === "entered")

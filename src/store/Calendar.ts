@@ -1,5 +1,5 @@
-import { create } from 'zustand';
-import {  INITIAL_EVENTS } from '@/data';
+import { create } from "zustand";
+import {  INITIAL_EVENTS } from "@/data";
 import { EventApi, EventInput } from "@fullcalendar/core";
 
 type State = {

@@ -1,13 +1,13 @@
-import css from './index.module.scss';
+import css from "./index.module.scss";
 import { data } from "@/data";
-import Card from './Card';
+import Card from "./Card";
 import Statistics from "@/pages/Dashboard/Statistics";
 import Orders from "@/pages/Dashboard/Orders";
 import { useState } from "react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
-    const [_, setActiveSelect] = useState<string>("");
+    const [activeSelect, setActiveSelect] = useState<string>("week");
 
     return (
         <motion.div
@@ -22,6 +22,7 @@ const Dashboard = () => {
                         <span>Dashboard</span>
                         <div className={css.durationButton}>
                             <select
+                                value={activeSelect}
                                 onChange={(e) => setActiveSelect(e.target.value)}
                             >
                                 <option value="week">1 week</option>

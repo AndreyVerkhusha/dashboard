@@ -1,34 +1,34 @@
 import { useMemo } from "react";
 import { MaterialReactTable, type MRT_ColumnDef } from "material-react-table";
+import { motion } from "framer-motion";
 import { UserData } from "@/types";
 import { userData } from "@/data";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { motion } from 'framer-motion';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import './index.scss';
+import "./index.scss";
 
 const Users = () => {
     const columns = useMemo<MRT_ColumnDef<UserData>[]>(() => [
         {
             accessorKey: "name.firstName",
-            header: 'First Name',
+            header: "First Name"
         },
         {
             accessorKey: "name.lastName",
-            header: 'Last Name',
+            header: "Last Name"
         },
         {
             accessorKey: "address", //normal accessorKey
-            header: "Address",
+            header: "Address"
         },
         {
             accessorKey: "city",
-            header: "City",
+            header: "City"
         },
         {
             accessorKey: "state",
-            header: "State",
-        },
+            header: "State"
+        }
     ], []);
 
     const theme = useMemo(

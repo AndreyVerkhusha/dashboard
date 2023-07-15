@@ -1,5 +1,5 @@
-import css from './index.module.scss';
-import { BsArrowUpShort } from 'react-icons/bs';
+import css from "./index.module.scss";
+import { BsArrowUpShort } from "react-icons/bs";
 import { data } from "@/data";
 import StatisticsChart from "@/pages/Dashboard/Statistics/StatisticsChart";
 

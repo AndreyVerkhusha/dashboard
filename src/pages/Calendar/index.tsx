@@ -1,16 +1,16 @@
-import FullCalendar from '@fullcalendar/react';
+import FullCalendar from "@fullcalendar/react";
 import {
     DateSelectArg,
     EventClickArg,
     EventApi
 } from "@fullcalendar/core";
-import dayGridPlugin from '@fullcalendar/daygrid';
-import interactionPlugin from '@fullcalendar/interaction';
-import timeGridPlugin from '@fullcalendar/timegrid';
-import useCalendar from '@/store/Calendar';
-import { data } from '@/data';
-import { motion } from 'framer-motion';
-import './index.scss';
+import dayGridPlugin from "@fullcalendar/daygrid";
+import interactionPlugin from "@fullcalendar/interaction";
+import timeGridPlugin from "@fullcalendar/timegrid";
+import useCalendar from "@/store/Calendar";
+import { data } from "@/data";
+import { motion } from "framer-motion";
+import "./index.scss";
 
 const Calendar = () => {
     const {currentEvents, setCurrentEvents} = useCalendar();
@@ -19,7 +19,7 @@ const Calendar = () => {
         setCurrentEvents(events);
     };
     const handleDateSelect = (selectInfo: DateSelectArg) => {
-        const title = prompt('Please enter a title for the event');
+        const title = prompt("Please enter a title for the event");
         const calendarApi = selectInfo.view.calendar;
         calendarApi.unselect();
 
@@ -34,7 +34,7 @@ const Calendar = () => {
         }
     };
     const handleEventClick = (clickInfo: EventClickArg) => {
-        if (confirm('Are you sure you want to delete this event?'))
+        if (confirm("Are you sure you want to delete this event?"))
             clickInfo.event.remove();
     };
     return (
@@ -49,7 +49,7 @@ const Calendar = () => {
                 <FullCalendar
                     plugins={[dayGridPlugin, interactionPlugin, timeGridPlugin]}
                     headerToolbar={{
-                        left: 'prev,next today',
+                        left: "prev,next today",
                         center: "title",
                         right: "dayGridMonth,timeGridWeek,timeGridDay"
                     }}

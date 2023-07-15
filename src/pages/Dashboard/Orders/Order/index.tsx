@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC } from "react";
 import { Order as OrderType } from "@/types";
 import css from "@/pages/Dashboard/Orders/index.module.scss";
 

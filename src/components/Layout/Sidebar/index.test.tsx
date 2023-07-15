@@ -1,6 +1,6 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
-import userEvent from '@testing-library/user-event';
+import userEvent from "@testing-library/user-event";
 import Sidebar from "@/components/Layout/Sidebar/index";
 
 describe("should change current location", () => {
@@ -11,9 +11,9 @@ describe("should change current location", () => {
                 {path: "/board", element: <Sidebar/>},
                 {path: "/calendar", element: <Sidebar/>},
                 {path: "/users", element: <Sidebar/>},
-                {path: "/dashboard", element: <Sidebar/>},
+                {path: "/dashboard", element: <Sidebar/>}
             ],
-            {initialEntries: ['/']}
+            {initialEntries: ["/"]}
         );
         render(<RouterProvider router={router}/>);
         return {router};
@@ -22,13 +22,13 @@ describe("should change current location", () => {
 
     it("count navigate buttons", () => {
         const {router} = setupMyTest();
-        const links = screen.getAllByRole('link');
+        const links = screen.getAllByRole("link");
         expect(links.length).toBe(4);
         console.log(router);
-    });
+    } );
     it("navigate to /dashboard", async () => {
         const {router} = setupMyTest();
-        const links = screen.getAllByRole('link');
+        const links = screen.getAllByRole("link");
 
         expect(router.state.location.pathname).toEqual("/");
 
@@ -39,7 +39,7 @@ describe("should change current location", () => {
     });
     it("navigate to /board", async () => {
         const {router} = setupMyTest();
-        const links = screen.getAllByRole('link');
+        const links = screen.getAllByRole("link");
 
         expect(router.state.location.pathname).toEqual("/");
 
@@ -50,7 +50,7 @@ describe("should change current location", () => {
     });
     it("navigate to /calendar", async () => {
         const {router} = setupMyTest();
-        const links = screen.getAllByRole('link');
+        const links = screen.getAllByRole("link");
 
         expect(router.state.location.pathname).toEqual("/");
 
@@ -61,7 +61,7 @@ describe("should change current location", () => {
     });
     it("navigate to /users", async () => {
         const {router} = setupMyTest();
-        const links = screen.getAllByRole('link');
+        const links = screen.getAllByRole("link");
 
         expect(router.state.location.pathname).toEqual("/");
 
