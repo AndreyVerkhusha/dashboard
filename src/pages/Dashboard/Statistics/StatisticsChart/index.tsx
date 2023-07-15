@@ -1,16 +1,16 @@
-import ReactECharts from 'echarts-for-react';
-import * as echarts from 'echarts';
+import ReactECharts from "echarts-for-react";
+import * as echarts from "echarts";
 
 const StatisticsChart = () => {
     const mathRandom = () =>
         Math.floor(Math.random() * 40000);
 
     const option = {
-        color: ['var(--orange)'],
+        color: ["var(--orange)"],
 
         toolbox: {
             feature: {
-                saveAsImage: {},
+                saveAsImage: {}
             }
         },
 
@@ -20,14 +20,14 @@ const StatisticsChart = () => {
                 type: "cross"
             },
             backgroundColor: "rgba(0, 0, 0, 0.59)",
-            borderWidth: 0,
+            borderWidth: 0
         },
         grid: {
             left: "3%",
             right: "4%",
             bottom: "3%",
             containLabel: true,
-            show: false,
+            show: false
         },
 
         xAxis: [
@@ -41,7 +41,7 @@ const StatisticsChart = () => {
             {
                 type: "value",
                 splitLine: {
-                    show: false,
+                    show: false
                 },
                 triggerEvent: false
             }
@@ -54,7 +54,7 @@ const StatisticsChart = () => {
                     color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
                         {
                             offset: 0,
-                            color: "rgb(255, 191, 0)",
+                            color: "rgb(255, 191, 0)"
                         },
                         {
                             offset: 1,
@@ -77,7 +77,7 @@ const StatisticsChart = () => {
                     ])
                 },
                 emphasis: {
-                    focus: "series",
+                    focus: "series"
                 },
                 showSymbol: true,
                 data: Array(7).fill(0).map(mathRandom)

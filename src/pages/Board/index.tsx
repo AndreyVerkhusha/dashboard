@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
-import Board, { moveCard, moveColumn, removeCard, addCard } from '@asseinfo/react-kanban';
+import { useState } from "react";
+import { motion } from "framer-motion";
+import Board, { moveCard, moveColumn, removeCard, addCard } from "@asseinfo/react-kanban";
 import { Card, Column } from "@/types";
-import Tilt from 'react-parallax-tilt';
+import Tilt from "react-parallax-tilt";
 
 import useBoard from "@/store/Board";
-import AddCardModal from './AddCardModal';
-import { RxCross2 } from 'react-icons/rx';
-import { IoMdAdd } from 'react-icons/io';
+import AddCardModal from "./AddCardModal";
+import { RxCross2 } from "react-icons/rx";
+import { IoMdAdd } from "react-icons/io";
 import "./index.scss";
 
 const BoardPage = () => {
@@ -42,22 +42,22 @@ const BoardPage = () => {
             case "TODO":
                 return {
                     background:
-                        "linear-gradient(65.35deg, rgba(65, 65, 65, 0.67) -1.72%, rgba(48, 189, 220) 163.54%)",
+                        "linear-gradient(65.35deg, rgba(65, 65, 65, 0.67) -1.72%, rgba(48, 189, 220) 163.54%)"
                 };
             case "Doing":
                 return {
                     background:
-                        "linear-gradient(65.35deg, rgba(65, 65, 65, 0.67) -1.72%, rgba(220, 48, 48) 163.54%)",
+                        "linear-gradient(65.35deg, rgba(65, 65, 65, 0.67) -1.72%, rgba(220, 48, 48) 163.54%)"
                 };
             case "Completed":
                 return {
                     background:
-                        "linear-gradient(65.35deg, rgba(65, 65, 65, 0.67) -1.72%, rgba(48, 220, 86) 163.54%)",
+                        "linear-gradient(65.35deg, rgba(65, 65, 65, 0.67) -1.72%, rgba(48, 220, 86) 163.54%)"
                 };
             case "Backlog":
                 return {
                     background:
-                        "linear-gradient(65.35deg, rgba(65, 65,65, 0.67) -1.72%,rgba(134, 48, 220) 163.54%)",
+                        "linear-gradient(65.35deg, rgba(65, 65,65, 0.67) -1.72%,rgba(134, 48, 220) 163.54%)"
                 };
         }
     };
@@ -84,7 +84,7 @@ const BoardPage = () => {
                 onColumnDragEnd={handleColumnMove}
                 renderColumnHeader={(props: Column) => {
                     return (
-                        <div className='column-header'>
+                        <div className="column-header">
                             <span>{props.title}</span>
                             <IoMdAdd
                                 color="white"
@@ -105,12 +105,12 @@ const BoardPage = () => {
                         glareMaxOpacity={0.45}
                         key={props.id}
                     >
-                        <div className='kanban-card' style={getGradient(props)}>
+                        <div className="kanban-card" style={getGradient(props)}>
                             <div>
                             <span>
                                 {props.title}
                             </span>
-                                <button className='remove-button' type='button'
+                                <button className="remove-button" type="button"
                                         onClick={() => {
                                             const updatedBoard =
                                                 removeCard(boardData, identifyColumn(props), props);

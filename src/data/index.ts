@@ -9,23 +9,23 @@ export const data = {
             {
                 title: "Revenue",
                 change: Math.floor(Math.random() * 250),
-                amount: Math.floor(Math.random() * 42222),
+                amount: Math.floor(Math.random() * 42222)
             },
             {
                 title: "Orders",
                 change: Math.floor(Math.random() * 250),
-                amount: Math.floor(Math.random() * 42222),
+                amount: Math.floor(Math.random() * 42222)
             },
             {
                 title: "Expenses",
                 change: Math.floor(Math.random() * 250),
-                amount: Math.floor(Math.random() * 42222),
+                amount: Math.floor(Math.random() * 42222)
             },
             {
                 title: "Profit",
                 change: Math.floor(Math.random() * 250),
-                amount: Math.floor(Math.random() * 42222),
-            },
+                amount: Math.floor(Math.random() * 42222)
+            }
         ];
     },
     ordersData(): Order[] {
@@ -35,7 +35,7 @@ export const data = {
                     name: "Skatebnoard",
                     type: "Illustration",
                     items: 58,
-                    change: 110,
+                    change: 110
                 },
                 {
                     name: "Language courses",
@@ -61,7 +61,7 @@ export const data = {
     groupNumber(number: number) {
         return parseFloat(number.toFixed(2))
             .toLocaleString("ru", {
-                useGrouping: true,
+                useGrouping: true
             });
     },
     boardData(): Board {
@@ -80,7 +80,7 @@ export const data = {
                             id: 3,
                             title: "Data Flow",
                             description: "Setup Diagram with other developers"
-                        },
+                        }
                     ]
                 },
                 {
@@ -90,7 +90,7 @@ export const data = {
                         {
                             id: 5,
                             title: "Data Table Page",
-                            description: "Server side Pagination",
+                            description: "Server side Pagination"
                         }
                     ]
                 },
@@ -139,12 +139,12 @@ const todayStr = moment().format("YYYY-MM-DD");
 export const INITIAL_EVENTS: EventInput[] = [
     {
         id: data.createEventId(),
-        title: 'Lunch Pary',
-        start: todayStr,
+        title: "Lunch Pary",
+        start: todayStr
     },
     {
         id: data.createEventId(),
-        title: 'Timed event',
+        title: "Timed event",
         start: moment(todayStr).add(1, "days").format("YYYY-MM-DD")
     },
     {
@@ -166,87 +166,87 @@ export const INITIAL_EVENTS: EventInput[] = [
         id: data.createEventId(),
         title: "VC Meeting",
         start: moment(todayStr).add(6, "days").format("YYYY-MM-DD")
-    },
+    }
 ];
 export const userData: UserData[] = [
     {
         name: {
-            firstName: 'John',
-            lastName: 'Doe',
+            firstName: "John",
+            lastName: "Doe"
         },
-        address: '261 Erdman Ford',
-        city: 'East Daphne',
-        state: 'Kentucky',
+        address: "261 Erdman Ford",
+        city: "East Daphne",
+        state: "Kentucky"
     },
     {
         name: {
-            firstName: 'Jane',
-            lastName: 'Doe',
+            firstName: "Jane",
+            lastName: "Doe"
         },
-        address: '769 Dominic Grove',
-        city: 'Columbus',
-        state: 'Ohio',
+        address: "769 Dominic Grove",
+        city: "Columbus",
+        state: "Ohio"
     },
     {
         name: {
-            firstName: 'Joe',
-            lastName: 'Doe',
+            firstName: "Joe",
+            lastName: "Doe"
         },
-        address: '566 Brakus Inlet',
-        city: 'South Linda',
-        state: 'West Virginia',
+        address: "566 Brakus Inlet",
+        city: "South Linda",
+        state: "West Virginia"
     },
     {
         name: {
-            firstName: 'Kevin',
-            lastName: 'Vandy',
+            firstName: "Kevin",
+            lastName: "Vandy"
         },
-        address: '722 Emie Stream',
-        city: 'Lincoln',
-        state: 'Nebraska',
+        address: "722 Emie Stream",
+        city: "Lincoln",
+        state: "Nebraska"
     },
     {
         name: {
-            firstName: 'Joshua',
-            lastName: 'Rolluffs',
+            firstName: "Joshua",
+            lastName: "Rolluffs"
         },
-        address: '32188 Larkin Turnpike',
-        city: 'Charleston',
-        state: 'South Carolina',
+        address: "32188 Larkin Turnpike",
+        city: "Charleston",
+        state: "South Carolina"
     }, {
         name: {
-            firstName: 'Jane',
-            lastName: 'Doe',
+            firstName: "Jane",
+            lastName: "Doe"
         },
-        address: '769 Dominic Grove',
-        city: 'Columbus',
-        state: 'Ohio',
+        address: "769 Dominic Grove",
+        city: "Columbus",
+        state: "Ohio"
     },
     {
         name: {
-            firstName: 'Joe',
-            lastName: 'Doe',
+            firstName: "Joe",
+            lastName: "Doe"
         },
-        address: '566 Brakus Inlet',
-        city: 'South Linda',
-        state: 'West Virginia',
+        address: "566 Brakus Inlet",
+        city: "South Linda",
+        state: "West Virginia"
     },
     {
         name: {
-            firstName: 'Kevin',
-            lastName: 'Vandy',
+            firstName: "Kevin",
+            lastName: "Vandy"
         },
-        address: '722 Emie Stream',
-        city: 'Lincoln',
-        state: 'Nebraska',
+        address: "722 Emie Stream",
+        city: "Lincoln",
+        state: "Nebraska"
     },
     {
         name: {
-            firstName: 'Joshua',
-            lastName: 'Rolluffs',
+            firstName: "Joshua",
+            lastName: "Rolluffs"
         },
-        address: '32188 Larkin Turnpike',
-        city: 'Charleston',
-        state: 'South Carolina',
-    },
+        address: "32188 Larkin Turnpike",
+        city: "Charleston",
+        state: "South Carolina"
+    }
 ];

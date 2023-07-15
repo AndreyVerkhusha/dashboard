@@ -13,5 +13,5 @@ if (!globalThis.fetch) {
     // @ts-expect-error
     globalThis.Response = Response;
 }
-import '@testing-library/jest-dom';
+import "@testing-library/jest-dom";
 

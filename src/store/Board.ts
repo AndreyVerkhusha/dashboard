@@ -1,5 +1,5 @@
-import {create} from 'zustand';
-import {data} from '@/data';
+import {create} from "zustand";
+import {data} from "@/data";
 import { Board } from "@/types";
 
 type State = {

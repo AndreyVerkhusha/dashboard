@@ -1,5 +1,5 @@
-import css from './index.module.scss';
-import img from '@/assets/logo.png';
+import css from "./index.module.scss";
+import img from "@/assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { MdSpaceDashboard } from "react-icons/md";
 import { AiFillCalendar, AiOutlineTable } from "react-icons/ai";

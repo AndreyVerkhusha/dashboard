@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import Layout from "./components/Layout";
 import { pages } from "./routes";
 import { AnimatePresence } from "framer-motion";
-import css from './App.module.css';
+import css from "./App.module.css";
 
 function App() {
 

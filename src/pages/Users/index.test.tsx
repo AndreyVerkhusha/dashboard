@@ -6,24 +6,24 @@ describe("render table", () => {
     const columns: MRT_ColumnDef[] = [
         {
             accessorKey: "name.firstName",
-            header: 'First Name',
+            header: "First Name"
         },
         {
             accessorKey: "name.lastName",
-            header: 'Last Name',
+            header: "Last Name"
         },
         {
             accessorKey: "address", //normal accessorKey
-            header: "Address",
+            header: "Address"
         },
         {
             accessorKey: "city",
-            header: "City",
+            header: "City"
         },
         {
             accessorKey: "state",
-            header: "State",
-        },
+            header: "State"
+        }
     ];
 
     it("columns count", () => {

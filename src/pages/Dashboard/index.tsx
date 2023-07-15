@@ -1,10 +1,10 @@
-import css from './index.module.scss';
+import css from "./index.module.scss";
 import { data } from "@/data";
-import Card from './Card';
+import Card from "./Card";
 import Statistics from "@/pages/Dashboard/Statistics";
 import Orders from "@/pages/Dashboard/Orders";
 import { useState } from "react";
-import { motion } from 'framer-motion';
+import { motion } from "framer-motion";
 
 const Dashboard = () => {
     const [_, setActiveSelect] = useState<string>("");

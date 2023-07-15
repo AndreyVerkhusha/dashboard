@@ -1,4 +1,4 @@
-import css from './index.module.scss';
+import css from "./index.module.scss";
 import logo from "@/assets/logo.png";
 import { data } from "@/data";
 import Order from "@/pages/Dashboard/Orders/Order";
