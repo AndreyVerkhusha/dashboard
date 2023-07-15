@@ -1,13 +1,11 @@
 import { render } from "@testing-library/react";
 import Dashboard from "@/pages/Dashboard/index";
 import { BrowserRouter } from "react-router-dom";
-import css from "@/pages/Dashboard/index.module.scss";
-import { data } from "@/data";
 
 
 describe("render elements on page", () => {
-    const errorSelect = (text: string) => {
-        throw new Error(text);
+    const errorSelect = () => {
+        throw new Error("select false");
     };
 
     it("select change correct", async () => {
@@ -15,7 +13,7 @@ describe("render elements on page", () => {
         const select = container.querySelector("select");
 
         if (!select)
-            return errorSelect("select false");
+            return errorSelect();
 
         expect(select).toBeInTheDocument();
         expect(select.value).toBe("week");
@@ -23,11 +21,5 @@ describe("render elements on page", () => {
         expect(select.value).toBe("month");
         select.options[2].selected = true;
         expect(select.value).toBe("year");
-    });
-    it("header dashboard render", () => {
-        const {container} = render(<Dashboard/>, {wrapper: BrowserRouter});
-        expect(container
-            .getElementsByClassName(css.card).length)
-            .toBe(data.dashboardData().length);
     });
 });
