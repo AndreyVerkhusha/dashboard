@@ -25,7 +25,7 @@ describe("should change current location", () => {
         const links = screen.getAllByRole("link");
         expect(links.length).toBe(4);
         console.log(router);
-    });
+    } );
     it("navigate to /dashboard", async () => {
         const {router} = setupMyTest();
         const links = screen.getAllByRole("link");
