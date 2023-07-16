@@ -58,7 +58,6 @@ const OrdersPieChart = () => {
             },
             trigger: "item",
             formatter: (params: { name: string, value: string }) => {
-                console.log(params, "params");
                 return `<div class='exp-charts-tooltip'>
                <span>${params.name + ": "}</span>
                <span>${params.value + "$"}</span>
