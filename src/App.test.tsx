@@ -5,8 +5,6 @@ import css from "./App.module.css";
 import App from "@/App";
 
 
-
-
 it("render App", async () => {
     const {container} = render(<App/>, {wrapper: BrowserRouter});
     const divApp = container.getElementsByClassName(css.app);
