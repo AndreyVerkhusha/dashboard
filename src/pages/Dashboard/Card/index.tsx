@@ -3,7 +3,6 @@ import { data } from "@/data";
 import { FC } from "react";
 import { DashboardCard } from "@/types";
 
-
 const Index: FC<DashboardCard> = ({title, amount, change}) => {
     return (
         <div
