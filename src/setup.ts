@@ -8,8 +8,7 @@ let spy: any;
 beforeAll(() => {
     spy = vi.spyOn(echarts, "getInstanceByDom")
         .mockImplementation(
-            // @ts-ignore
-            () => ({
+            (): any => ({
                 hideLoading: vi.fn(),
                 setOption: vi.fn(),
                 showLoading: vi.fn()
