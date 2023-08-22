@@ -1,11 +1,11 @@
 import { useMemo } from "react";
 import { MaterialReactTable, type MRT_ColumnDef } from "material-react-table";
 import { motion } from "framer-motion";
-import { UserData } from "@/types";
+import { UserData } from "@/types/types";
 import { userData } from "@/data";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
-import "./index.scss";
+import "./Users.scss";
 
 const Users = () => {
     const columns = useMemo<MRT_ColumnDef<UserData>[]>(() => [

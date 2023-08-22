@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from "react";
 import { Transition } from "react-transition-group";
 
-import css from "./index.module.scss";
+import css from "./AddCardModal.module.scss";
 
 type Props = {
     visible: boolean

@@ -1,7 +1,7 @@
-import css from "@/pages/Dashboard/index.module.scss";
+import css from "@/pages/Dashboard/Dashboard.module.scss";
 import { data } from "@/data";
 import { FC } from "react";
-import { DashboardCard } from "@/types";
+import { DashboardCard } from "@/types/types";
 
 
 const Index: FC<DashboardCard> = ({title, amount, change}) => {

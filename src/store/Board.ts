@@ -1,6 +1,6 @@
 import {create} from "zustand";
 import {data} from "@/data";
-import { Board } from "@/types";
+import { Board } from "@/types/types";
 
 type State = {
     boardData: Board

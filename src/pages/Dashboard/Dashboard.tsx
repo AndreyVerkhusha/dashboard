@@ -1,8 +1,8 @@
-import css from "./index.module.scss";
+import css from "./Dashboard.module.scss";
 import { data } from "@/data";
 import Card from "./Card";
-import Statistics from "@/pages/Dashboard/Statistics";
-import Orders from "@/pages/Dashboard/Orders";
+import Statistics from "@/pages/Dashboard/Statistics/Statistics";
+import Orders from "@/pages/Dashboard/Orders/Orders";
 import { useState } from "react";
 import { motion } from "framer-motion";
 

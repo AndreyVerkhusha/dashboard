@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router-dom";
-import Layout from "./components/Layout";
+import Layout from "./components/Layout/Layout";
 import { pages } from "./routes";
 import { AnimatePresence } from "framer-motion";
 import css from "./App.module.css";
@@ -11,11 +11,11 @@ function App() {
             <AnimatePresence>
                 <Routes>
                     <Route path={"/"} element={<Layout/>}>
-                        {pages.map((Pages) =>
+                        {pages.map((Page) =>
                             <Route
-                                path={Pages.path}
-                                element={<Pages.Component/>}
-                                key={Pages.path}
+                                path={Page.path}
+                                element={<Page.Component/>}
+                                key={Page.path}
                             />
                         )}
                     </Route>
