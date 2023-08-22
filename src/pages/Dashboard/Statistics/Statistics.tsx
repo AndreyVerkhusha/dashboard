@@ -1,7 +1,7 @@
-import css from "./index.module.scss";
+import css from "./Statistics.module.scss";
 import { BsArrowUpShort } from "react-icons/bs";
 import { data } from "@/data";
-import StatisticsChart from "@/pages/Dashboard/Statistics/StatisticsChart";
+import StatisticsChart from "@/pages/Dashboard/Statistics/StatisticsChart/StatisticsChart";
 
 const Statistics = () => {
     return (

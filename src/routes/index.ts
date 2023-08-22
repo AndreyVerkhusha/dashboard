@@ -1,7 +1,7 @@
-import Board from "@/pages/Board";
-import Dashboard from "@/pages/Dashboard";
-import Calendar from "@/pages/Calendar";
-import Users from "@/pages/Users";
+import Board from "@/pages/Board/Board";
+import Dashboard from "@/pages/Dashboard/Dashboard";
+import Calendar from "@/pages/Calendar/Calendar";
+import Users from "@/pages/Users/Users";
 import { ComponentType } from "react";
 
 export const pages: { path: string, Component: ComponentType }[] = [

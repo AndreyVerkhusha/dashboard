@@ -1,4 +1,4 @@
-import css from "./index.module.scss";
+import css from "./Sidebar.module.scss";
 import img from "@/assets/logo.png";
 import { NavLink } from "react-router-dom";
 import { MdSpaceDashboard } from "react-icons/md";

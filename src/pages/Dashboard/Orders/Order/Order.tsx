@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { Order as OrderType } from "@/types";
-import css from "@/pages/Dashboard/Orders/index.module.scss";
+import { Order as OrderType } from "@/types/types";
+import css from "@/pages/Dashboard/Orders/Orders.module.scss";
 
 const Order: FC<OrderType> = ({type, change, items, name}) => {
     return (

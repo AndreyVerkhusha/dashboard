@@ -1,5 +1,5 @@
 import { render } from "@testing-library/react";
-import Dashboard from "@/pages/Dashboard/index";
+import Dashboard from "@/pages/Dashboard/Dashboard";
 import { BrowserRouter } from "react-router-dom";
 import css from "@/pages/Dashboard/index.module.scss";
 import { data } from "@/data";

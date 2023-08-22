@@ -1,7 +1,7 @@
 import { render, screen, waitFor } from "@testing-library/react";
 import { createMemoryRouter, RouterProvider } from "react-router-dom";
 import userEvent from "@testing-library/user-event";
-import Sidebar from "@/components/Layout/Sidebar/index";
+import Sidebar from "@/components/Layout/Sidebar/Sidebar";
 
 describe("should change current location", () => {
     const setupMyTest = () => {

@@ -10,7 +10,7 @@ import timeGridPlugin from "@fullcalendar/timegrid";
 import useCalendar from "@/store/Calendar";
 import { data } from "@/data";
 import { motion } from "framer-motion";
-import "./index.scss";
+import "./Calendar.scss";
 
 const Calendar = () => {
     const {currentEvents, setCurrentEvents} = useCalendar();

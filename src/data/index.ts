@@ -1,7 +1,9 @@
 import moment from "moment/moment";
-import { Board, DashboardCard, Order, UserData } from "@/types";
+import { Board, DashboardCard, Order, UserData } from "@/types/types";
 import { EventInput } from "@fullcalendar/core";
 
+let eventGuid = 0;
+const todayStr = moment().format("YYYY-MM-DD");
 
 export const data = {
     dashboardData(): DashboardCard[] {
@@ -133,9 +135,6 @@ export const data = {
         return String(eventGuid++);
     }
 };
-
-let eventGuid = 0;
-const todayStr = moment().format("YYYY-MM-DD");
 export const INITIAL_EVENTS: EventInput[] = [
     {
         id: data.createEventId(),

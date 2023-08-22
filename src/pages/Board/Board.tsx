@@ -1,14 +1,14 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import Board, { moveCard, moveColumn, removeCard, addCard } from "@asseinfo/react-kanban";
-import { Card, Column } from "@/types";
+import { Card, Column } from "@/types/types";
 import Tilt from "react-parallax-tilt";
 
 import useBoard from "@/store/Board";
-import AddCardModal from "./AddCardModal";
+import AddCardModal from "./AddCardModal/AddCardModal";
 import { RxCross2 } from "react-icons/rx";
 import { IoMdAdd } from "react-icons/io";
-import "./index.scss";
+import "./Board.scss";
 
 const BoardPage = () => {
     const {boardData, setBoard} = useBoard();

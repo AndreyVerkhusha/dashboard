@@ -1,8 +1,8 @@
-import css from "./index.module.scss";
+import css from "./Orders.module.scss";
 import logo from "@/assets/logo.png";
 import { data } from "@/data";
-import Order from "@/pages/Dashboard/Orders/Order";
-import Chart from "@/pages/Dashboard/Orders/Chart";
+import Order from "@/pages/Dashboard/Orders/Order/Order";
+import Chart from "@/pages/Dashboard/Orders/Chart/Chart";
 
 const Orders = () => {
     return (
