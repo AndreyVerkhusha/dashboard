@@ -3,6 +3,6 @@ import { BrowserRouter } from "react-router-dom";
 import Layout from "@/components/Layout/Layout";
 
 it("render component", () => {
-    render(<Layout/>, {wrapper: BrowserRouter});
-    expect(screen.getByText(/Andrey verkhusha/i)).toBeInTheDocument();
+  render(<Layout />, { wrapper: BrowserRouter });
+  expect(screen.getByText(/Andrey verkhusha/i)).toBeInTheDocument();
 });

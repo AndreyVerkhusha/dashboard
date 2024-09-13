@@ -12,7 +12,7 @@ module.exports = {
     'react-refresh/only-export-components': 'warn',
     "quotes": ["warn", "double"],
     "jsx-quotes": ["error", "prefer-double"],
-    "max-len": ["error", {"code":  125}],
+    "max-len": ["error", {"code":  120}],
     "comma-dangle": ["error", "never"],
     "semi": ["warn", "always"]
   },

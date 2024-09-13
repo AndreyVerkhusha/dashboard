@@ -6,31 +6,24 @@ import { fetch, Request, Response } from "@remix-run/web-fetch";
 // и этим руинит тест.
 let spy: any;
 beforeAll(() => {
-    spy = vi.spyOn(echarts, "getInstanceByDom")
-        .mockImplementation(
-            (): any => ({
-                hideLoading: vi.fn(),
-                setOption: vi.fn(),
-                showLoading: vi.fn()
-            })
-        );
+  spy = vi.spyOn(echarts, "getInstanceByDom").mockImplementation((): any => ({
+    hideLoading: vi.fn(),
+    setOption: vi.fn(),
+    showLoading: vi.fn()
+  }));
 });
 afterAll(() => {
-    spy.mockRestore();
+  spy.mockRestore();
 });
 
 if (!globalThis.fetch) {
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    globalThis.fetch = fetch;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    globalThis.Request = Request;
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-expect-error
-    globalThis.Response = Response;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  globalThis.fetch = fetch;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  globalThis.Request = Request;
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  // @ts-expect-error
+  globalThis.Response = Response;
 }
-
-
-
-
